@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PockNote</title>
+    <meta name="description" content="Animated Books with CSS 3D Transforms" />
+    <meta name="keywords" content="book, 3d, interactive, animated, 3d transform, css, web design" />
+    <meta name="author" content="Marco Barría for Codrops" />
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/demo.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/book2.css" />
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-7243260-2']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        $(document).ready(function () {
+            $('.head').animate({height:'150px'})
+
+
+
+            $('.desinput').focus(function () {
+                $(this).siblings().css('display', 'inline-block')
+            })
+            $('.desinput').blur(function () {
+                setTimeout(function () {
+                    $('.desinput').siblings().css('display', 'none')
+                },1000);
+            });
+            $('.desbutton').click(function () {
+                $(this).css('display', 'none')
+            });
+
+
+            $('.diginput').focus(function () {
+                $(this).siblings().css('display', 'inline-block')
+            })
+            $('.diginput').blur(function () {
+                setTimeout(function () {
+                    $('.diginput').siblings().css('display', 'none')
+                },1000);
+            });
+            $('.digbutton').click(function () {
+                $(this).css('display', 'none')
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="head">
+    <span>Jambo，</span>
+    <span><%= ok %></span>
+</div>
+<div class="container">
+
+    <div class="component">
+        <ul class="align">
+            <li>
+                <figure class='book'>
+                    <ul class='paperback_front' style="background-color: transparent">
+                        <li>
+                            <span class="ribbon">Nº1</span>
+                            <img src="images/14.jpg" alt="" width="100%" height="100%">
+                        </li>
+
+                        <li></li>
+                    </ul>
+                    <ul class='ruled_paper'>
+                        <li></li>
+                        <li>
+                            <form action="enterlife" method="post">
+                                <button class="btn" type="submit">ENTER</button>
+                            </form>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='paperback_back' style="background-color: saddlebrown">
+                        <li></li>
+                    </ul>
+                    <figcaption style="z-index: 555555">
+                        <h1>Life Notebook</h1>
+                        <span>
+                            <form action="des" method="post">
+                                <input type="text" name="des" value="<%= des %>" class="desinput">
+                                <button type="submit" class="desbutton">OK</button>
+                            </form>
+                        </span>
+                        <p>
+                        <form action="digest" method="post">
+                            <textarea type="text" name="dig"  class="diginput"><%= digest %></textarea>
+                            <button type="submit" class="digbutton">OK</button>
+                        </form>
+                        </p>
+                    </figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure class='book'>
+
+                    <!-- Front -->
+
+                    <ul class='paperback_front' style="background-color: transparent">
+                        <li>
+                            <span class="ribbon">NEW</span>
+                            <img src="images/paper.jpg" alt="" width="100%" height="100%">
+                        </li>
+                        <li></li>
+                    </ul>
+
+                    <!-- Pages -->
+
+                    <ul class='ruled_paper'>
+                        <li></li>
+                        <li>
+                            <a class="btn" href="#">ENTER</a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+
+                    <!-- Back -->
+
+                    <ul class='paperback_back'>
+                        <li>
+                            <img src="images/paper.jpg" alt="" width="100%" height="100%">
+                        </li>
+                        <li></li>
+                    </ul>
+                    <figcaption>
+                        <h1>Work Notebook</h1>
+                        <span>
+                            <form action="des2" method="post">
+                                <input type="text" name="des2" value="<%= des2 %>" class="desinput">
+                                <button type="submit" class="desbutton">OK</button>
+                            </form>
+                        </span>
+                        <p>
+                        <form action="digest2" method="post">
+                            <textarea type="text" name="dig2"  class="diginput"><%= digest2 %></textarea>
+                            <button type="submit" class="digbutton">OK</button>
+                        </form>
+                        </p>
+                    </figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure class='book'>
+
+                    <!-- Front -->
+
+                    <ul class='paperback_front green'>
+                        <li>
+                            <img src="images/zombie.png" alt="" width="100%" height="100%">
+                        </li>
+                        <li></li>
+                    </ul>
+
+                    <!-- Pages -->
+
+                    <ul class='ruled_paper'>
+                        <li></li>
+                        <li>
+                            <a class="btn" href="#">ENTER</a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+
+                    <!-- Back -->
+
+                    <ul class='paperback_back green'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption>
+                        <h1>Study Notebook</h1>
+                        <span>
+                            <form action="des3" method="post">
+                                <input type="text" name="des3" value="<%= des3 %>" class="desinput">
+                                <button type="submit" class="desbutton">OK</button>
+                            </form>
+                        </span>
+                        <p>
+                        <form action="digest3" method="post">
+                            <textarea type="text" name="dig3"  class="diginput"><%= digest3 %></textarea>
+                            <button type="submit" class="digbutton">OK</button>
+                        </form>
+                        </p>
+                    </figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure class='book'>
+
+                    <!-- Front -->
+
+                    <ul class='paperback_front red'>
+                        <li>
+                            <img src="images/12.jpg" alt="" width="100%" height="100%">
+                        </li>
+                        <li></li>
+                    </ul>
+
+                    <!-- Pages -->
+
+                    <ul class='ruled_paper'>
+                        <li></li>
+                        <li>
+                            <a class="btn" href="#">ENTER</a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+
+                    <!-- Back -->
+
+                    <ul class='paperback_back red'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption>
+                        <h1>Todo List</h1>
+                        <span>
+                            <form action="des4" method="post">
+                                <input type="text" name="des4" value="<%= des4 %>" class="desinput">
+                                <button type="submit" class="desbutton">OK</button>
+                            </form>
+                        </span>
+                        <p>
+                        <form action="digest4" method="post">
+                            <textarea type="text" name="dig4"  class="diginput"><%= digest4 %></textarea>
+                            <button type="submit" class="digbutton">OK</button>
+                        </form>
+                        </p>
+                    </figcaption>
+                </figure>
+            </li>
+        </ul>
+    </div>
+    <p class="note">Please note that this only works in browsers that support CSS 3D Transforms. Also note that IE10 <strong>does not</strong> support <em>preserve-3d</em> which is needed for this demo.</p>
+</div>
+</body>
+</html>

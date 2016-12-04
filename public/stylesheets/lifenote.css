@@ -1,0 +1,68 @@
+body,html {
+    overflow-y: hidden;
+}
+#note {
+    background-color: white;
+    box-shadow: 0 0 6px 1px lightgray;
+    border-radius: 8px;
+    /*width: 68%;*/
+    /*height: 480px;*/
+    /*top: 80px;*/
+    /*left: 68%;*/
+    /*margin-left: -52%;*/
+    width:10px;
+    height: 10px;
+    top: 300px;
+    left: 50%;
+    position: fixed;
+    float: left;
+    overflow: auto;
+    z-index: 1;
+    overflow-x: hidden;
+    /*overflow-y: hidden;*/
+}
+*{
+    /*filter: blur(3px);*/
+}
+form {
+    margin-top: 0;
+    width: 100%;
+}
+form input{
+    margin-top: 0;
+    font-size: 25px;
+    padding-left: 100px;
+    width: 100%;
+    height: 50px;
+    border: 0;
+    background-color: darkcyan;
+    /*background-image: url("/images/113.jpg");*/
+    background-position: center;
+    color: white;
+    font-family: "微软雅黑 Light";
+}
+textarea {
+    height: 100px;
+    width: 103%;
+    border: 0;
+    outline:none;
+}
+button {
+    outline:none;
+    /*background-color: whitesmoke;*/
+    background-color: transparent;
+    width: 33%;
+    border: 0 solid transparent;
+    margin: 0;
+}
+button:hover{
+    color: palevioletred;
+}
+#notecon {
+    width: 100%;
+    height: 1000px;
+}
+#save, #delete, .open{
+    color: transparent;
+    height: 0;
+}

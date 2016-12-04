@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <title>Document</title>
+</head>
+<body>
+<main>
+    <div class="backimg">
+        <img src="/images/11.jpeg" alt="">
+    </div>
+    <div class="sheet">
+        <p>P o c k  N o t e</p>
+        <form action="signup" method="post">
+            <input type="text" name="name" id="name" placeholder="Account">
+            <input type="text" name="password" id="password" placeholder="Password">
+            <button id="btn1">Sign up</button>
+        </form>
+        <p id="formp"><%= exits %></p>
+    </div>
+</main>
+</body>
+<script>
+    $(document).ready(function () {
+        $('.sheet').css({'top': '150px', 'opacity': '1'});
+        $('#btn1').click(function (check) {
+            var name = $('#name').val();
+            var password = $('#password').val();
+            if(name == '' || password == ''){
+                check.preventDefault();
+                function nameerr() {
+                    $('#name').focus();
+                    $('#formp').html('Account cannot be empty')
+                }
+                function passerr() {
+                    $('#password').focus();
+                    $('#formp').html('Password cannot be empty')
+                }
+                name == '' ? nameerr() : passerr();
+            }
+        })
+    })
+</script>
+</html>
+
